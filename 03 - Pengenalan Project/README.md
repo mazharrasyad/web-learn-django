@@ -1,0 +1,46 @@
+# 03 - Pengenalan Project
+
+- Buka Terminal
+- cd folder_venv, contoh cd Env/
+- source folder_env/bin/activate, contoh source Env/bin/activate
+- pip list, mengecek Django sudah terinstall atau belum, jika belum lihat langkah diatas
+- django-admin startproject nama_project, contoh django-admin startproject mywebsite (Jika sudah ada projectnya maka tidak perlu membuat lagi)
+- Pada folder nama_project akan terdapat 2 item yaitu manage.py dan nama_project, nama_project yang pertama merupakan base direktori dan nama_project yang kedua adalah project direktori sehingga nama_project yang pertama tidak akan berpengaruh jika digantii namanya. Berikut ilustrasinya :
+    - mywebsite
+    -   |--> manage.py
+    -   |--> mywebsite
+    - Jika folder mywebsite yang pertama diganti maka tidak akan berpengaruh, contoh :
+    - Django_Project
+    -   |--> manage.py
+    -   |--> mywebsite
+- Jika folder project sudah terbuat maka buka folder tersebut dengan menggunakan text editor untuk mempermudah pemrograman nantinya
+- Jika sudah dibuka pada text editor maka perhatikan file-file yang ada pada project tersebut
+    - manage.py merupakan file core (inti) yang melakukan operasi di django, seperti migrasi database, menjalankan server sehingga (tidak boleh didelete)
+    - nama_project/__init__.py untuk memberitahukan folder nama_project adalah module yang nantinya manage.py akan mengambil module dari folder nama_project (tidak boleh didelete)
+    - nama_project/settings.py merupakan pengaturan dari project seperti, 
+        - import os untuk melihat posisi folder project
+        - BASE_DIR untuk melihat base direktori contoh www atau htdocs
+        - SECRET_KEY merupakan security key untuk enkripsi
+        - DATABASES untuk mengatur koneksi ke database dan dapat diubah menjadi sqllite, mongodb, postgresql, oracle karena sudah ada bawaannya
+        - WSGI_APPLIICATION untuk interface dengan python, django, dan server
+        - MIDDLEWARE untuk aplikasi tambahan        
+    - nama_project/urls.py merupakan pintu pertama yang akan diterima django saat menjalankan website
+    - nama_project/wsgi.py untuk koneksi antara python, django, dan server untuk mendapatkan request dari url -> server -> python -> django
+- Jalankan server django dengan perintah berikut :
+    - Ketik cd nama_project/, contoh cd mywebsite/
+    - Ketik python manage.py runserver, maka otomatis akan terbuat file db.sqlite3
+    - Biarkan terminal tersebut berjalan dan jangan ditutup agar server tetap berjalan
+    - Lihat tampilannya dan cari URL servernya kemudian masukkan URL tersebut ke browser, contoh pada gambar test_server.png
+- Jika berhasil maka akan tampil seperti pada gambar test_server.png dan pertama kali akan masuk ke index
+- Kemudian coba membuat tampilan views :
+    - Buka file urls.py
+    - Kemudian cek pada baris 19 yaitu urlpatterns yang nantinya akan ditambahkan tampilan
+    - Kemudian ubah codenya seperti pada file urls.py diatas dari baris 19 - 37 atau cukup menambahkan perintah yang ada tulisan # Tambahan dalam file tersebut
+    - Berikut penjelasannya :
+        - from django.http untuk mengambil HttpResponse yang nantinya akan menampilkan view pada browser
+        - r adalah row string, contoh r''
+        - ^ adalah skip semua dan cari yang awalnya kata yang dicar, contoh ^admin/
+        - $ adalah akhir dari kata yang dicari, contoh admin/$ maka
+        - index adalah respon http
+- Gambaran utamanya : Server dijalankan -> nama_project -> urls.py -> urlpatterns kemudian dicari URL yang cocok sesuai request dari browser -> browser mengeksekusi perintah -> Perintah ditampilkan pada browser
+- Alur : server -> project -> url
