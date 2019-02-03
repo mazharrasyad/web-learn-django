@@ -86,7 +86,7 @@
     -   |--> manage.py
     -   |--> mywebsite
     - Jika folder mywebsite yang pertama diganti maka tidak akan berpengaruh, contoh :
-    - web_django
+    - Django_Project
     -   |--> manage.py
     -   |--> mywebsite
 - Jika folder project sudah terbuat maka buka folder tersebut dengan menggunakan text editor untuk mempermudah pemrograman nantinya
@@ -108,10 +108,10 @@
     - Biarkan terminal tersebut berjalan dan jangan ditutup agar server tetap berjalan
     - Lihat tampilannya dan cari URL servernya kemudian masukkan URL tersebut ke browser, contoh pada gambar test_server.png
 - Jika berhasil maka akan tampil seperti pada gambar test_server.png dan pertama kali akan masuk ke index
-- Kemudian coba membuat tampilan Hello World :
+- Kemudian coba membuat tampilan views :
     - Buka file urls.py
     - Kemudian cek pada baris 19 yaitu urlpatterns yang nantinya akan ditambahkan tampilan
-    - Kemudian ubah codenya seperti pada file mywebsite/urls.py
+    - Kemudian ubah codenya seperti pada file urls.py diatas dari baris 19 - 37 atau cukup menambahkan perintah yang ada tulisan # Tambahan dalam file tersebut
     - Berikut penjelasannya :
         - from django.http untuk mengambil HttpResponse yang nantinya akan menampilkan view pada browser
         - r adalah row string, contoh r''
@@ -119,6 +119,17 @@
         - $ adalah akhir dari kata yang dicari, contoh admin/$ maka
         - index adalah respon http
 - Gambaran utamanya : Server dijalankan -> nama_project -> urls.py -> urlpatterns kemudian dicari URL yang cocok sesuai request dari browser -> browser mengeksekusi perintah -> Perintah ditampilkan pada browser
+- Alur : server -> project -> url
+
+# 04 - Pengenalan Views
+
+- Penjelasan pada file urls1.py dan views.py
+- Alur : server -> project -> url -> views
+
+# 05 - Pengenalan Templates
+
+- Penjelasan pada file urls2.py, views1.py, settings.py, dan folder templates
+- Alur : server -> project -> url -> views -> templates
 
 # Referensi
 
